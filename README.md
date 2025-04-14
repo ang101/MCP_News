@@ -71,7 +71,7 @@ Connect to your server:
 ```
 ## Tools
 
-The server exposes the following MCP tools:
+The server exposes the following MCP tools. Additional reference [The News Api Documentation](https://www.thenewsapi.com/documentation)
 
 ### 1. Get Top News
 
