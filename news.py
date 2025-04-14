@@ -85,13 +85,31 @@ def format_news_dict_to_string(features: (dict, list, str), output: str = "") ->
 # Define a tool using the @mcp.tool() decorator
 # This makes the function available as a callable tool to MCP clients
 @mcp.tool()
-async def get_top_news(locale: str = "",categories: str = "", search: str= "") -> str:
+async def get_top_news(locale: str = "",categories: str = "", search: str= "",
+                        search_fields: str = "",exclude_categories: str = "", domains: str= "",
+                        exclude_domains: str = "",source_ids: str = "", exclude_source_ids: str= "",
+                        language: str = "",published_before: str = "", published_after: str= "",
+                        published_on: str = "",sort: str = "", limit: str= "", page: str= "") -> str:
     """Get top news stories.
 
     Args:
          locale: 2-letter ISO 3166-1 code of the country, default is all countries.
-         categories: The category of news to fetch [general , science , sports , business , health , entertainment , tech , politics , food , travel]
+         categories: Comma separated list of categories to include. [general , science , sports , business , health , entertainment , tech , politics , food , travel]
          search: Keywords or a phrase to search for.
+         search_fields: Comma separated list of fields to apply the search parameter to. [title, description, keywords, main_text]
+         exclude_categories: Comma separated list of categories to exclude.
+         domains: Comma separated list of domains to include.
+         exclude_domains: Comma separated list of domains to exclude
+         source_ids: Comma separated list of source_ids to include.
+         exclude_source_ids: Comma separated list of source_ids to exclude.
+         language: Comma separated list of languages to include. Default is all.
+         published_before: Find all articles published before the specified date.
+         published_after: Find all articles published after the specified date.
+         published_on: Find all articles published on the specified date.
+         sort: Sort by published_on or relevance_score (only available when used in conjunction with search)
+         limit: Specify the number of articles you want to return in the request.
+         page: Use this to paginate through the result set.
+
     """
 
     ### looping url creation: loops through all local variables and adds them to the
@@ -129,16 +147,32 @@ async def get_top_news(locale: str = "",categories: str = "", search: str= "") -
 
 # All News endpoint on thenewsapi.com
 @mcp.tool()
-async def get_all_news(categories: str ="", language: str = "", search: str= "") -> str:
+async def get_all_news(categories: str ="", language: str = "", search: str= "",
+                    search_fields: str = "",exclude_categories: str = "", domains: str= "",
+                    exclude_domains: str = "",source_ids: str = "", exclude_source_ids: str= "",
+                    published_before: str = "", published_after: str= "",published_on: str = "",
+                    sort: str = "", limit: str= "", page: str= "") -> str:
     """
     Use this endpoint to find all live and historical articles we collect.
     Filtering by language, category, source and publish date is also possible,
     as well as advanced searching on title and the main text of the article.
 
     Args:
-         language: Comma separated list of languages to include. Default is all.
          categories: The category of news to fetch [general , science , sports , business , health , entertainment , tech , politics , food , travel]
+         language: Comma separated list of languages to include. Default is all.
          search: Keywords or a phrase to search for.
+         search_fields: Comma separated list of fields to apply the search parameter to. [title, description, keywords, main_text]
+         exclude_categories: Comma separated list of categories to exclude.
+         domains: Comma separated list of domains to include.
+         exclude_domains: Comma separated list of domains to exclude
+         source_ids: Comma separated list of source_ids to include.
+         exclude_source_ids: Comma separated list of source_ids to exclude.
+         published_before: Find all articles published before the specified date.
+         published_after: Find all articles published after the specified date.
+         published_on: Find all articles published on the specified date.
+         sort: Sort by published_on or relevance_score (only available when used in conjunction with search)
+         limit: Specify the number of articles you want to return in the request.
+         page: Use this to paginate through the result set.
     """
 
     ### looping url creation: loops through all local variables and adds them to the
@@ -174,9 +208,12 @@ async def get_all_news(categories: str ="", language: str = "", search: str= "")
 
     return format_news_dict_to_string(data)
 
-# Similar News endpoint on thenewsapi.com (to_do)
+# Similar News endpoint on thenewsapi.com
 @mcp.tool()
-async def get_similar_news(uuid: str = "", categories: str = "", language: str = "") -> str:
+async def get_similar_news(uuid: str = "", categories: str = "", language: str = "",
+                        exclude_categories: str = "",source_ids: str = "", exclude_source_ids: str= "",
+                        published_before: str = "", published_after: str= "",published_on: str = "",
+                        limit: str= "", page: str= "") -> str:
     """
     Use this endpoint to find similar stories to a specific article based on its UUID.
 
@@ -184,6 +221,14 @@ async def get_similar_news(uuid: str = "", categories: str = "", language: str =
         uuid: The unique identifier for an article in our system.
         language: Comma separated list of languages to include. Default is all.
         categories: The category of news to fetch [general , science , sports , business , health , entertainment , tech , politics , food , travel]
+        exclude_categories: Comma separated list of categories to exclude.
+        source_ids: Comma separated list of source_ids to include.
+        exclude_source_ids: Comma separated list of source_ids to exclude.
+        published_before: Find all articles published before the specified date.
+        published_after: Find all articles published after the specified date.
+        published_on: Find all articles published on the specified date.
+        limit: Specify the number of articles you want to return in the request.
+        page: Use this to paginate through the result set.
     """
 
     ### looping url creation: loops through all local variables and adds them to the
@@ -219,7 +264,7 @@ async def get_similar_news(uuid: str = "", categories: str = "", language: str =
 
     return format_news_dict_to_string(data)
 
-# News by UUID endpoint on thenewsapi.com (to_do)
+# News by UUID endpoint on thenewsapi.com
 @mcp.tool()
 async def get_article_by_uuid(uuid: str = "") -> str:
     """
@@ -276,7 +321,6 @@ async def get_news_sources(categories: str = "", language: str = "",exclude_cate
         exclude_categories: Comma separated list of categories to exclude
         language: Comma separated list of languages to include. Default is all.
         page: Use this to paginate through the result set. Default is 1.
-
     """
 
     ### looping url creation: loops through all local variables and adds them to the
