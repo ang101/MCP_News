@@ -104,7 +104,7 @@ get_similar_news(uuid="", categories="", language="")
 ```
 
 Find similar stories to a specific article based on its UUID:
-- `uuid`: The unique identifier for an article in the system
+- `uuid`(string **required**): The unique identifier for an article in the system
 - `language`(string **optional**): Comma-separated list of languages to include (default is all)
 - `categories`(string **optional**): Comma-seperated list of category of news to fetch (general, science, sports, business, health, entertainment, tech, politics, food, travel)
 
@@ -115,7 +115,7 @@ get_news_by_uuid(uuid="")
 ```
 
 Find specific articles by UUID:
-- `uuid` (string): The unique identifier for an article in the system
+- `uuid` (string **required**): The unique identifier for an article in the system
 
 ### 5. Get News Sources
 
