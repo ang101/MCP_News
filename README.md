@@ -36,13 +36,13 @@ A Python-based service that wraps [TheNewsAPI](https://thenewsapi.com/) to provi
 
 ## Required Dependencies
 
-- httpx
-- mcp (Message Communication Protocol)
-- starlette
-- uvicorn
-- aiohttp
-- python-dotenv
-- requests
+- httpx - Used for async HTTP requests to the news API
+- mcp - Message Communication Protocol server framework used throughout the application
+- starlette - ASGI framework used for the web application
+- uvicorn - ASGI server for running the application
+- aiohttp - Async HTTP client/server framework
+- python-dotenv - Used to load environment variables from a .env file
+- requests - HTTP library for making requests
 
 ## Usage
 
