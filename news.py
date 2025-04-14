@@ -101,19 +101,21 @@ async def get_top_news(locale: str = "",categories: str = "", search: str= "") -
     api_token = NEWS_API_KEY
 
     #loop through local variables
-    for key, value in locals().items():
-        # create the dictionary on first loop
-        if 'params' not in locals():
-            params = {}
+    features = locals()
+    keys = list(features.keys())
+    params = {}
+    for key in keys:
+        value = features[key]
         if type(value) == str:
             # remove whitespace from value
             value = value.strip()
+            value = value.lower()
             # check if a value was entered for local variable
             if value != "":
                 # add local variable to url
                 params[key] = value
-            if type(value) == list:
-                params[key] = ",".join(value)
+        if type(value) == list:
+            params[key] = ",".join(value)
 
     # Construct URL using urlencode
     url = f"{BASE_URL}/top?{urlencode(params)}"
@@ -146,19 +148,21 @@ async def get_all_news(categories: str ="", language: str = "", search: str= "")
     api_token = NEWS_API_KEY
 
     #loop through local variables
-    for key, value in locals().items():
-        # create the dictionary on first loop
-        if 'params' not in locals():
-            params = {}
+    features = locals()
+    keys = list(features.keys())
+    params = {}
+    for key in keys:
+        value = features[key]
         if type(value) == str:
             # remove whitespace from value
             value = value.strip()
+            value = value.lower()
             # check if a value was entered for local variable
             if value != "":
                 # add local variable to url
                 params[key] = value
-            if type(value) == list:
-                params[key] = ",".join(value)
+        if type(value) == list:
+            params[key] = ",".join(value)
 
     # Construct URL using urlencode
     url = f"{BASE_URL}/all?{urlencode(params)}"
@@ -189,19 +193,21 @@ async def get_similar_news(uuid: str = "", categories: str = "", language: str =
     api_token = NEWS_API_KEY
 
     #loop through local variables
-    for key, value in locals().items():
-        # create the dictionary on first loop
-        if 'params' not in locals():
-            params = {}
+    features = locals()
+    keys = list(features.keys())
+    params = {}
+    for key in keys:
+        value = features[key]
         if type(value) == str:
             # remove whitespace from value
             value = value.strip()
+            value = value.lower()
             # check if a value was entered for local variable
             if value != "":
                 # add local variable to url
                 params[key] = value
-            if type(value) == list:
-                params[key] = ",".join(value)
+        if type(value) == list:
+            params[key] = ",".join(value)
 
     # Construct URL using urlencode
     url = f"{BASE_URL}/similar/{uuid}?{urlencode(params)}"
@@ -231,19 +237,21 @@ async def get_article_by_uuid(uuid: str = "") -> str:
     api_token = NEWS_API_KEY
 
     #loop through local variables
-    for key, value in locals().items():
-        # create the dictionary on first loop
-        if 'params' not in locals():
-            params = {}
+    features = locals()
+    keys = list(features.keys())
+    params = {}
+    for key in keys:
+        value = features[key]
         if type(value) == str:
             # remove whitespace from value
             value = value.strip()
+            value = value.lower()
             # check if a value was entered for local variable
             if value != "":
                 # add local variable to url
                 params[key] = value
-            if type(value) == list:
-                params[key] = ",".join(value)
+        if type(value) == list:
+            params[key] = ",".join(value)
 
     # Construct URL using urlencode
     url = f"{BASE_URL}/uuid/{uuid}?{urlencode(params)}"
@@ -278,19 +286,21 @@ async def get_news_sources(categories: str = "", language: str = "",exclude_cate
     api_token = NEWS_API_KEY
 
     #loop through local variables
-    for key, value in locals().items():
-        # create the dictionary on first loop
-        if 'params' not in locals():
-            params = {}
+    features = locals()
+    keys = list(features.keys())
+    params = {}
+    for key in keys:
+        value = features[key]
         if type(value) == str:
             # remove whitespace from value
             value = value.strip()
+            value = value.lower()
             # check if a value was entered for local variable
             if value != "":
                 # add local variable to url
                 params[key] = value
-            if type(value) == list:
-                params[key] = ",".join(value)
+        if type(value) == list:
+            params[key] = ",".join(value)
 
     # Construct URL using urlencode
     url = f"{BASE_URL}/sources?{urlencode(params)}"
