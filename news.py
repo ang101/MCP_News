@@ -70,9 +70,11 @@ def format_news_dict_to_string(features: (dict, list, str), output: str = "") ->
             output += "\n---\n"
             output = format_news_dict_to_string(value,output)
     elif type(features) is dict:
-        for key, value in features.items():
-                output += f"{key[0].upper()+key[1:]}: "
-                output = format_news_dict_to_string(value,output)
+        keys = list(features.keys())
+        for key in keys:
+            value = features[key]
+            output += f"{key[0].upper()+key[1:]}: "
+            output = format_news_dict_to_string(value,output)
     else:
         output += f"{features} \n"
 
