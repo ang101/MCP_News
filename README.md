@@ -46,7 +46,7 @@ A Python-based service that wraps [TheNewsAPI](https://thenewsapi.com/) to provi
 
 ### Usage
 
-## Starting the Server
+### Starting the Server
 
 Run the news.py file to start the MCP server:
 
