@@ -14,8 +14,6 @@ A Python-based service that wraps [TheNewsAPI](https://thenewsapi.com/) to provi
 ## Prerequisites
 
 - Python 3.7+
-- Node.js (v18 or later recommended)
-- npm (usually included with Node.js)
 - News API key from [TheNewsAPI](https://thenewsapi.com/)
 
 ## Installation
