@@ -140,7 +140,7 @@ Meta:
 - page: Page number based on the page parameter.
 
 Data:
-- uuid: Unique identifier for an article in our system.
+- uuid: Unique identifier for an article in the system.
 - title: Article title.
 - description: The article meta description.
 - keywords: The article meta keywords.
