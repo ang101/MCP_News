@@ -149,8 +149,8 @@ The service provides a simple web interface accessible at the root URL (e.g., `h
 - Starlette application for web interface and SSE
 
 ## Acknowledgements
-- [Model Context Protocol]([https://modelcontextprotocol.io/]) 
-- [NANDA: The Internet of AI Agents]([https://nanda.media.mit.edu/])
+- [Model Context Protocol](https://modelcontextprotocol.io/) 
+- [NANDA: The Internet of AI Agents](https://nanda.media.mit.edu/)
 - [TheNewsAPI](https://thenewsapi.com/)
 
 ## Contributors
