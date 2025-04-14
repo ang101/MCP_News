@@ -73,7 +73,7 @@ Connect to your server:
 
 The server exposes the following MCP tools:
 
-#### 1. Get Top News
+### 1. Get Top News
 
 ```python
 get_top_news(locale="", categories="", search="")
@@ -85,7 +85,7 @@ Fetches top news stories with optional filtering:
 - `search`(string **optional**): Keywords or a phrase to search for
 - **Example JSON Arguments:** `{ "location": "us", "categories": "business,tech" }`
   
-#### 2. Get All News
+### 2. Get All News
 
 ```python
 get_all_news(categories="", language="", search="")
@@ -97,7 +97,7 @@ Find all live and historical articles with filtering options:
 - `search`(string,**optional**): Keywords or a phrase to search for
 - **Example JSON Arguments:** `{ "language": "en", "categories": "sports" }`
 
-#### 3. Get Similar News
+### 3. Get Similar News
 
 ```python
 get_similar_news(uuid="", categories="", language="")
@@ -110,7 +110,7 @@ Find similar stories to a specific article based on its UUID:
 - **Example JSON Arguments:** `{ "location": "us", "categories": "business,tech" }`
 
 
-#### 4. Get News by UUID
+### 4. Get News by UUID
 
 ```python
 get_news_by_uuid(uuid="")
@@ -119,7 +119,7 @@ get_news_by_uuid(uuid="")
 Find specific articles by UUID:
 - `uuid` (string): The unique identifier for an article in the system
 
-#### 5. Get News Sources
+### 5. Get News Sources
 
 ```python
 get_news_sources(categories="", language="", exclude_categories="", page="")
