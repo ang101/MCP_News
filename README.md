@@ -44,9 +44,9 @@ A Python-based service that wraps [TheNewsAPI](https://thenewsapi.com/) to provi
 - python-dotenv - Used to load environment variables from a .env file
 - requests - HTTP library for making requests
 
-## Usage
+### Usage
 
-### Starting the Server
+## Starting the Server
 
 Run the news.py file to start the MCP server:
 
@@ -69,7 +69,7 @@ Connect to your server:
 ```
 > connect sse http://localhost:8080/sse
 ```
-### Available Endpoints
+## Tools
 
 The server exposes the following MCP tools:
 
@@ -148,9 +148,11 @@ The service provides a simple web interface accessible at the root URL (e.g., `h
 - Helper functions for formatting responses
 - Starlette application for web interface and SSE
 
-## Error Handling
+## Acknowledgements
+- [Model Context Protocol]([https://modelcontextprotocol.io/]) 
+- [NANDA: The Internet of AI Agents]([https://nanda.media.mit.edu/])
+- [TheNewsAPI](https://thenewsapi.com/)
 
-The service includes comprehensive error handling:
-- API communication errors 
-- Missing API key errors are logged appropriately
-- Request timeouts are managed with proper defaults
+## Contributors
+- Angela Garabet
+- Patrick DeKelly
