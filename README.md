@@ -130,7 +130,7 @@ Get sources to use in your news API requests:
 - `page`(string **optional**): Used to paginate through the result set (default is 1)
 
 
-### Tool response 
+## Tool Response 
 Documentation and API Error Codes: - [TheNewsAPI](https://www.thenewsapi.com/documentation))
 
 Meta:
