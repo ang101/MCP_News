@@ -78,11 +78,6 @@ def format_news_dict_to_string(features: (dict, list, str), output: str = "") ->
 
     return output
 
-'''
-Find sources that display news in a specific country(locale).
-Possible options:aearataubebgbrcachcncocuczdeegfrgbgrhkhuidieilinitjpkrltlvmamxmyngnlnonzphplptrorsrusasesgsiskthtrtwuausveza.
-Default: all countries. '''
-
 # Top Stories endpoint on thenewsapi.com
 
 # Define a tool using the @mcp.tool() decorator
@@ -95,7 +90,7 @@ async def get_top_news(locale: str = "",categories: str = "", search: str= "") -
          locale: 2-letter ISO 3166-1 code of the country, default is all countries.
          categories: The category of news to fetch [general , science , sports , business , health , entertainment , tech , politics , food , travel]
          search: Keywords or a phrase to search for.
-"""
+    """
 
     ### looping url creation: loops through all local variables and adds them to the
     ### url get request if a value was entered
@@ -218,7 +213,7 @@ async def get_similar_news(uuid: str = "", categories: str = "", language: str =
 
 # News by UUID endpoint on thenewsapi.com (to_do)
 @mcp.tool()
-async def get_similar_news(uuid: str = "") -> str:
+async def get_article_by_uuid(uuid: str = "") -> str:
     """
     Use this endpoint to find specific articles by the UUID which is returned on our search endpoints.
     This is useful if you wish to store the UUID to return the article later.
