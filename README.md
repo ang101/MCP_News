@@ -83,7 +83,7 @@ Fetches top news stories with optional filtering:
 - `locale`(string **optional**): Comma-seperated list of the 2-letter ISO 3166-1 code of the country (default is all countries)
 - `categories` (string **optional**): Comma-seperated list of category of news to fetch (general, science, sports, business, health, entertainment, tech, politics, food, travel)
 - `search`(string **optional**): Keywords or a phrase to search for
-- **Example Arguments:** `{ "locale": "us", "categories": "business"}`
+- **Example:** get_top_news(locale="us",categories="business,sports")
   
 ### 2. Get All News
 
@@ -95,7 +95,7 @@ Find all live and historical articles with filtering options:
 - `language`(string **optional**): Comma-separated list of languages to include (default is all)
 - `categories`(string **optional**): Comma-seperated list of category of news to fetch (general, science, sports, business, health, entertainment, tech, politics, food, travel)
 - `search`(string,**optional**): Keywords or a phrase to search for
-- **Example Arguments:** `{ "language": "en", "categories": "sports" }`
+- **Example:** get_all_news(language="en",categories= "sports")
 
 ### 3. Get Similar News
 
