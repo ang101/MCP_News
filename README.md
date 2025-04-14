@@ -129,6 +129,31 @@ Get sources to use in your news API requests:
 - `language`(string **optional**): Comma-separated list of languages to include
 - `page`(string **optional**): Used to paginate through the result set (default is 1)
 
+
+### Tool response 
+Documentation and API Error Codes: - [TheNewsAPI](https://www.thenewsapi.com/documentation))
+
+Meta:
+- found: Number of articles found for the request.
+- returned: Number of articles returned on current page. If less than the limit, there are no more results
+- limit: Limit based on the limit parameter.
+- page: Page number based on the page parameter.
+
+Data:
+- uuid: Unique identifier for an article in our system.
+- title: Article title.
+- description: The article meta description.
+- keywords: The article meta keywords.
+- snippet: The first 60 characters of the article body.
+- url: The URL to the article.
+- image_url: The URL to the article image.
+- language: The language of the source.
+- published_at: The datetime the article was published.
+- source: The domain of the source.
+- categories: Array of strings which the source is categorized as.
+- relevance_score: Relevance score based on the search parameter. If the search parameter is not used, this is null.
+- locale: Locale of the source.
+
 ## Web Interface
 
 The service provides a simple web interface accessible at the root URL (e.g., `http://localhost:8080/`). From this interface, you can:
